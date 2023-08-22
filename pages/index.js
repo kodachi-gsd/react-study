@@ -15,7 +15,6 @@ export default function Home() {
 
       <Main page="index" />
       <Footer />
-
     </div>
   )
 }
