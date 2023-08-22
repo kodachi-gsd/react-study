@@ -8,7 +8,10 @@ import { Headline } from './Headline'
 export function Main(props) {
   return (
       <main className={styles.main}>
-        <Headline page={props.page}>
+        <Headline 
+          page={props.page}
+          onClick={() => alert("Clicked")}
+        >
           <code className={styles.code}>pages/{props.page}.js</code>
         </Headline>
         <Links />
