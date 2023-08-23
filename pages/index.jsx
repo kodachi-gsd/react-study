@@ -3,7 +3,7 @@ import styles from 'styles/Home.module.css'
 import { Footer } from 'components/Footer'
 import { Main } from 'components/Main'
 import { Header } from 'components/Header'
-import { useCallback } from 'react'
+import { useCallback, useEffect } from 'react'
 import Link from 'next/link';
 
 export default function Home() {
@@ -15,6 +15,7 @@ export default function Home() {
     alert(foo);
     
   }, []);
+
 
   return (
     <div className={styles.container}>
