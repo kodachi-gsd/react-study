@@ -1,9 +1,6 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import classes from './Main.module.css'
-import { Footer } from './Footer'
-import { Links } from './Links'
-import { Headline } from './Headline'
+import classes from 'components/Main/Main.module.css'
+import { Links } from 'components/Links'
+import { Headline } from 'components/Headline'
 
 export function Main(props) {
   return (
