@@ -4,31 +4,30 @@ import { Footer } from 'components/Footer'
 import { Main } from 'components/Main'
 import { Header } from 'components/Header'
 import { useCallback, useEffect, useState } from 'react'
-import Link from 'next/link';
 
 export default function Home() {
   const [count, setCount] = useState(1)
 
-  // let foo = 1
-
-  const handleClick = (e) => {
-    setCount((count) => count + 1)
-    setCount((count) => count + 1)
-
-    // foo = foo + 1;
-  };
+  const handleClick = useCallback(() => {
+    console.log(count);
+    if (count < 10) {
+      setCount((count) => count + 1);
+    }
+  },[count]);
 
   useEffect(() => {
     // マウント時の処理
     // console.log("マウント時の処理")
+    // console.log(`マウント時: ${count}`)
     document.body.style.backgroundColor = "lightblue";
 
     // アンマウント時の処理
     return ( ) => {
       // console.log("アンマウント時の処理")
+      // console.log(`アンマウント時: ${count}`)
       document.body.style.backgroundColor = "";
     };
-  },[]);
+  },[count]);
 
   console.log(count)
 
