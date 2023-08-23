@@ -13,6 +13,7 @@ export default function Home() {
     console.log(e.target.href);
     e.preventDefault();
     alert(foo);
+    
   }, []);
 
   return (
