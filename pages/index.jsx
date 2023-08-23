@@ -3,19 +3,34 @@ import styles from 'styles/Home.module.css'
 import { Footer } from 'components/Footer'
 import { Main } from 'components/Main'
 import { Header } from 'components/Header'
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link';
 
 export default function Home() {
-  const foo = 1
+  const [count, setCount] = useState(1)
 
-  const handleClick = useCallback((e) => {
-    console.log(e.target.href);
-    e.preventDefault();
-    alert(foo);
-    
-  }, []);
+  // let foo = 1
 
+  const handleClick = (e) => {
+    setCount((count) => count + 1)
+    setCount((count) => count + 1)
+
+    // foo = foo + 1;
+  };
+
+  useEffect(() => {
+    // マウント時の処理
+    // console.log("マウント時の処理")
+    document.body.style.backgroundColor = "lightblue";
+
+    // アンマウント時の処理
+    return ( ) => {
+      // console.log("アンマウント時の処理")
+      document.body.style.backgroundColor = "";
+    };
+  },[]);
+
+  console.log(count)
 
   return (
     <div className={styles.container}>
@@ -25,9 +40,8 @@ export default function Home() {
       </Head>
       
       <Header />
-      <Link href="/about">
-        <a onClick={handleClick}>button</a>
-      </Link>
+        <h1>{count}</h1>
+        <button onClick={handleClick}>button</button>
       <Main page="index" />
       <Footer />
     </div>
