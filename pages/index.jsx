@@ -6,7 +6,6 @@ import { Header } from 'components/Header'
 import { useCallback } from 'react'
 import Link from 'next/link';
 
-
 export default function Home() {
   const foo = 1
 
@@ -32,3 +31,8 @@ export default function Home() {
     </div>
   )
 }
+
+
+
+
+
